@@ -17,6 +17,12 @@ module.exports = {
         const series= await Series.findById(req.params.id)
         return res.json(series)        
     }, 
+    async showSeriesByGenre(req, res) {
+        console.log('ola', req.params.genre)
+        const series= await Series.find(req.params.genre)
+        
+        return res.json(series)        
+    }, 
     async updateSeries(req, res) {
         
         const serie = await Series.findOneAndUpdate(
@@ -36,7 +42,8 @@ module.exports = {
            comments:req.body.comments
 
         })
-        return res.json(serie)
+        return res.send(serie)
+        
     },
     async removeSeries(req, res) {
         const series= await Series.findByIdAndRemove(req.params.id)

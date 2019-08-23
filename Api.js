@@ -25,5 +25,5 @@ server.use(routesSeries)
 
 
 
-server.listen(process.env.PORT || 3333)
+server.listen(3333)
 module.exports= server
