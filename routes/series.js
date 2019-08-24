@@ -10,9 +10,10 @@ const seriesControllers = require('../controllers/series')
 
  }) */
  router.post('/serie/', seriesControllers.storeSeries)    
+ router.get('/serie/:genre', seriesControllers.showSeriesByGenre)
  router.get('/serie/', seriesControllers.indexSeries)
  router.get('/serie/:id', seriesControllers.showSeries)
- router.get('/serie/:genre', seriesControllers.showSeriesByGenre)
+ 
  router.put('/serie/:id', seriesControllers.updateSeries) 
  router.delete('/serie/:id', seriesControllers.removeSeries) 
  

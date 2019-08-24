@@ -19,7 +19,8 @@ module.exports = {
     }, 
     async showSeriesByGenre(req, res) {
         console.log('ola', req.params.genre)
-        const series= await Series.find(req.params.genre)
+        const series= await Series.find({genre:req.params.genre})
+        console.log(series)
         
         return res.json(series)        
     }, 
